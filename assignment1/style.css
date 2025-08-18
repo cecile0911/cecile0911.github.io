@@ -1,0 +1,42 @@
+body {
+  font-family: "Sawarabi Mincho", serif;
+  font-optical-sizing: auto;
+  /* font-weight: bold; */
+  font-style: normal;
+  background-color: rgb(234, 144, 48);
+  color: black;
+}
+h1 {
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
+  font-size: 3rem;
+}
+h2 {
+  margin-top: 1rem;
+  font-family: "Caveat", cursive;
+  font-weight: <weight>;
+  font-style: normal;
+  font-size: 2rem;
+}
+.smaller {
+  font-size: 25px;
+}
+h3 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 20px;
+}
+h4 {
+  text-align: center;
+}
+section {
+  margin-top: 2rem;
+  text-align: left;
+  border: 1px dashed black;
+  margin-bottom: 2rem;
+}
+p {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
