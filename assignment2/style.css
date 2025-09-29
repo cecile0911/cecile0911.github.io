@@ -1,0 +1,219 @@
+:root {
+  --primary-bg-color: #f6d8c2;
+  --text-color: #ffffff;
+  --main-bg-color: #000000;
+  --main-text-color: #ffffff;
+  --main-btn-bg-color: #938989;
+}
+
+
+/* I want my title has hand written style and large enough*/
+.title {
+  font-family: "Mynerve", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  /* background-color: rgba(228, 179, 120, 0.59); */
+  text-align: center;
+}
+
+
+/* control the second line of the title */
+section h1{
+    font-family: "Gowun Dodum", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: right;
+}
+
+.cover-img{
+  border-radius: 2%;
+}
+section {
+  padding: 2rem;
+  background-color: rgba(210, 175, 133, 0.437); 
+  border-radius: 5px; /* round */
+  margin: 1rem auto;
+
+}
+body,
+h1,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: var(--primary-bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-image: url(bg_1.jpg);
+  /* https://au.pinterest.com/pin/844493674906091/ */
+  background-size: cover;
+}
+
+/* Add additional styles as needed */
+
+/* Create a container for the main content */
+.container {
+  max-width: 1000px;
+  width: 100%;
+  padding: 10px;
+}
+
+/* Header styling */
+header {
+  font-family: "Poiret One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: large;
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+}
+
+/* Navigation styling */
+/* nav {
+  border-style: dashed;
+  border-width: 2px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+} */
+
+/* Media player styling */
+.media-player {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.media-player video {
+  max-width: 100%;
+}
+
+.custom-controls {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  gap: 15px; 
+}
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+  width: 100%; 
+}
+.custom-controls button {
+  /* background-color: var(--main-btn-bg-color); */
+  background-color: rgba(210, 182, 153, 0.683);
+  color: var(--main-text-color);
+  border: 3px double rgb(65, 41, 27);
+  border-radius: 15px;
+  padding: 8px 8px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+button:hover {
+  scale: 0.9;
+  background-color: rgba(209, 157, 86, 0.173);
+}
+
+.progress-bar {
+  flex: 1; 
+  height: 10px;
+  background-color: #e9d6a9;
+  overflow: hidden;
+  border-radius: 5px;
+}
+/* .progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #e6e6ff;
+  margin-top: 10px;
+  overflow: hidden;
+  border-radius: 5px; 
+} */
+
+.progress-bar span {
+  display: block;
+  height: 100%;
+  background-color: var(--main-bg-color);
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+/* make sure every img in this section looks good */
+
+.touch-img{
+    width: 300px;
+    height: 450px;
+  display: block; 
+  margin: 20px auto;   
+  max-width: 60%;      
+  border-radius: 15px;
+   transition: transform 0.5s ease;
+}
+
+.touch-img:hover {
+  transform: scale(0.9); 
+}
+
+#img1 {
+  display: block;
+  margin-left: 0;       /* left */
+  margin-right: auto;
+  cursor: pointer;
+}
+
+#img2 {
+  display: block;
+  margin-left: auto;    /* center */
+  margin-right: auto;
+}
+
+#img3 {
+  display: block;
+  margin-left: auto;    /* right */
+  margin-right: 0;
+}
+
+.touch-img.round {
+  border-radius: 50%;
+  transition: border-radius 0.7s ease;
+}
+/* Footer styling */
+footer {
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+}

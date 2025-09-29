@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- add the font family of your choice -->
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Mynerve&family=Poiret+One&family=Vina+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <h1>Media Player Website</h1>
+    </header>
+
+
+    <!-- Main Content Section -->
+    <main class="container">
+      <!-- for the title of media -->
+      <section>
+        <h1 class="title">Your Relaxing Zone</h1>
+        <h1>Catch your breath from the busy life.</h1>
+      </section>
+      <!-- Media Player Section -->
+      <div class="media-player">
+        <!-- <video id="custom-video-player" controls>
+          <source
+            src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/miac.mp4"
+            type="video/mp4"
+          />
+        </video> -->
+        
+        <!--at this stage, I plan to change this web's topic to a relax zone -->
+        <!--so I put this audio instead  -->
+        <audio
+          id="custom-audio-player"
+          src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/erokia_ambient-wave-56-msfxp7-78.mp3"
+          controls
+        ></audio>
+        <!--I want some sound effect when user click the button  -->
+        <!-- https://freesound.org/people/dwengomes/sounds/409468/ -->
+        <audio src="piano_key.mp3" id="pop-sound"></audio>
+        <div class="custom-controls">
+  <!-- let the img at the right place -->
+  <div>
+    <img class="cover-img" src="https://i.pinimg.com/1200x/e0/9c/5a/e09c5af5ef61b721d7b1a1390b5f19cb.jpg" 
+         alt="cover img" width="550" height="550">
+  </div>
+
+  <!-- control button and progress bar -->
+  <div class="controls">
+    <button id="play-pause-btn" onclick="togglePlayPause()" class="with-sound">
+      <img id="play-pause-img"
+           src="https://img.icons8.com/ios-glyphs/30/play--v1.png"
+           alt="Play Button" width="20" height="20" />
+    </button>
+
+    <button id="mute-unmute-btn" class="with-sound">
+      <img id="mute-unmute-img"
+           src="https://img.icons8.com/ios-glyphs/30/no-audio--v1.png"
+           alt="Mute Button" width="20" height="20" />
+    </button>
+
+    <div class="progress-bar">
+      <span id="progress-bar-fill"></span>
+    </div>
+  </div>
+</div>
+
+      <!-- Additional Content Section -->
+       <!--instruction here -->
+        <h1 class="title">Natural sound for study</h1>
+      <section>
+<!--I want some pictures of nature scenes  -->
+<!-- https://au.pinterest.com/pin/281543697874289/ --> 
+ <img class="touch-img" id="img1" src="https://i.pinimg.com/736x/c4/d6/b7/c4d6b7e7ef99a2d58538b279bd0439b4.jpg" alt=""> 
+ <!-- here is the sound for img1 -->
+ <!-- https://freesound.org/people/l0vebliss/sounds/519055/ -->
+  <audio id="img1-audio" src="bird.wav"></audio>
+
+<!-- https://au.pinterest.com/pin/949978115161406341/ --> 
+<img class="touch-img" id="img2"  src="https://i.pinimg.com/736x/a3/3c/2a/a33c2abe7aa76774eaadaa26cc39fbe3.jpg" alt="">
+<!-- here is the sound for img2 -->
+<!-- https://freesound.org/people/usefulthings/sounds/524227/ -->
+ <audio id="img2-audio" src="water.flac"></audio>
+<!-- https://au.pinterest.com/pin/5277724559658443/ --> 
+<img class="touch-img" id="img3" src="https://i.pinimg.com/1200x/d3/13/76/d3137655aaa233966959ee71284c92a0.jpg" alt="">
+<!-- here is the sound for img3 -->
+ <!-- https://freesound.org/people/Jovica/sounds/77862/ -->
+  <audio id="img3-audio" src="leaves.mp3"></audio>
+    
+     <p>Do not forget to add sugar to your coffee.</p> 
+     <!-- Add more content as needed --> 
+    </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+      <p>&copy; 2024 Media Player Website. All rights reserved.</p>
+      <a href="https://icons8.com/icon/59862/play">Play</a> icon by
+      <a href="https://icons8.com">Icons8</a>
+      <a href="https://icons8.com/icon/61012/pause">Pause</a> icon by
+      <a href="https://icons8.com">Icons8</a>
+    </footer>
+  </body>
+</html>
