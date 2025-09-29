@@ -5,7 +5,7 @@
   --main-text-color: #ffffff;
   --main-btn-bg-color: #938989;
 }
-
+/* the inspiration of color palette comes from latte  */
 
 /* I want my title has hand written style and large enough*/
 .title {
@@ -19,24 +19,22 @@
   text-align: center;
 }
 
-
 /* control the second line of the title */
-section h1{
-    font-family: "Gowun Dodum", sans-serif;
+section h1 {
+  font-family: "Gowun Dodum", sans-serif;
   font-weight: 400;
   font-style: normal;
   text-align: right;
 }
 
-.cover-img{
+.cover-img {
   border-radius: 2%;
 }
 section {
   padding: 2rem;
-  background-color: rgba(210, 175, 133, 0.437); 
+  background-color: rgba(210, 175, 133, 0.437);
   border-radius: 5px; /* round */
   margin: 1rem auto;
-
 }
 body,
 h1,
@@ -118,15 +116,15 @@ nav a {
 
 .custom-controls {
   display: flex;
-  flex-direction: column; 
-  align-items: center; 
-  gap: 15px; 
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
 }
 .controls {
   display: flex;
   align-items: center;
-  gap: 10px; 
-  width: 100%; 
+  gap: 10px;
+  width: 100%;
 }
 .custom-controls button {
   /* background-color: var(--main-btn-bg-color); */
@@ -147,7 +145,7 @@ button:hover {
 }
 
 .progress-bar {
-  flex: 1; 
+  flex: 1;
   height: 10px;
   background-color: #e9d6a9;
   overflow: hidden;
@@ -172,43 +170,48 @@ button:hover {
 
 /* make sure every img in this section looks good */
 
-.touch-img{
-    width: 300px;
-    height: 450px;
-  display: block; 
-  margin: 20px auto;   
-  max-width: 60%;      
+.touch-img {
+  width: 300px;
+  height: 450px;
+  display: block;
+  margin: 20px auto;
+  max-width: 60%;
+  border: dashed rgb(98, 69, 15);
   border-radius: 15px;
-   transition: transform 0.5s ease;
+  transition: transform 0.5s ease;
 }
 
 .touch-img:hover {
-  transform: scale(0.9); 
+  transform: scale(0.9);
 }
-
+/* this section need more elements */
+/* however, I did not find the perfect way */
+/* to put text with images */
+/* so I arranged these 3 imgs in different way */
 #img1 {
   display: block;
-  margin-left: 0;       /* left */
+  margin-left: 0; /* left */
   margin-right: auto;
   cursor: pointer;
+  padding: auto;
 }
 
 #img2 {
   display: block;
-  margin-left: auto;    /* center */
+  margin-left: auto; /* center */
   margin-right: auto;
+  cursor: pointer;
+  padding: auto;
 }
 
 #img3 {
   display: block;
-  margin-left: auto;    /* right */
+  margin-left: auto; /* right */
   margin-right: 0;
+  cursor: pointer;
+  padding: auto;
 }
 
-.touch-img.round {
-  border-radius: 50%;
-  transition: border-radius 0.7s ease;
-}
 /* Footer styling */
 footer {
   background-color: var(--main-bg-color);

@@ -19,6 +19,10 @@ function updateProgressBar() {
   progressBar.style.width = value + "%";
 }
 // Add other functionalities here
+// for the first media player
+// I only added the mute function
+// cause there is no playlist here
+// and I prefer the whole page more concise
 // mute button here
 const muteUnmuteButton = document.querySelector("#mute-unmute-btn");
 console.log(muteUnmuteButton);
