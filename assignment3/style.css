@@ -1,141 +1,125 @@
-/* ========== 基础 ========== */
-html, body { height: 100%; margin: 0; }
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-      font-family: "Pixelify Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  font-weight: 300; 
-  min-height: 100svh;
+  font-family: "Pixelify Sans", sans-serif;
+  font-weight: 400;
+  background: radial-gradient(ellipse at bottom, #0b0611, #030204 90%);
+  background-repeat: no-repeat;
+  background-size: cover;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  /* 哥特暗底 */
-  background-color: #050507;
-
- 
-  
+  color: #e6d9f5;
+  image-rendering: pixelated;
 }
-/* 暗角 + 颗粒（气氛层） */
-body::before,
-body::after{
-  content:"";
+
+/* 微颗粒层 */
+body::after {
+  content: "";
   position: fixed;
   inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 2px 2px;
+  opacity: 0.4;
   pointer-events: none;
 }
-body::before{
-  /* 暗角 */
-  background: radial-gradient(80% 80% at 50% 50%, transparent 50%, rgba(0,0,0,0.55) 100%);
-  mix-blend-mode: multiply;
-}
-body::after{
-  /* 细微噪点 */
-  background-image:
-    radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 2px 2px;
-  opacity: .6;
-}
 
-/* ========== 3D 容器 ========== */
+/* 主容器 */
 .all {
   display: flex;
-  perspective: 800px;                 /* 比原来更近，厚重感 */
-  transform: perspective(1200px) rotateX(8deg);
-  perspective-origin: 50% 45%;
-  transition: transform 1.2s cubic-bezier(.2,.7,.2,1), perspective 1.2s cubic-bezier(.2,.7,.2,1);
   justify-content: center;
+  perspective: 1000px;
+  transform: perspective(1000px) rotateX(10deg);
   transform-style: preserve-3d;
+  transition: transform 1.2s ease;
 }
 
-/* 悬停时慢慢抬平，像祭坛升起 */
-.all:hover {
-  perspective: 1400px;
-  transform: perspective(2000px) rotateX(2deg);
-}
-
-/* 悬停时让说明消隐、其它卡片显现 */
-.all:hover .explainer { opacity: 0; }
-.all:hover > div { opacity: 1; transition-delay: 0s; }
-.all:hover .text { opacity: 1; transform: translateY(22px); }
-
-/* ========== 卡片（石板/皮革感） ========== */
-.left, .center, .right, .lefter, .righter {
-  width: 200px;
-  height: 150px;
+/* ====== 卡片基础 ====== */
+.lefter, .left, .center, .right, .righter {
+  width: 180px;
+  height: 140px;
   transform-style: preserve-3d;
-  border-radius: 12px;
-
-  /* 暗色边框 + 复古金外线 */
-  border: 2px solid #2b1f33;
-  outline: 1px solid rgba(164, 132, 90, 0.25);
-
-  /* 内凹与烛光 */
+  border-radius: 6px;
+  border: 1px solid rgba(170, 120, 255, 0.4);
+  background: linear-gradient(180deg, rgba(40, 20, 70, 0.9), rgba(10, 5, 20, 0.95));
   box-shadow:
-    inset 0 1px 0 rgba(255, 235, 200, 0.05),
-    inset 0 -2px 10px rgba(0, 0, 0, 0.45),
-    0 8px 24px rgba(0,0,0,.5);
-
-  opacity: 0;              /* 初始隐藏，中央那张显示 */
-  transition: transform .35s ease, box-shadow .35s ease, background-color .35s ease, opacity .35s ease;
-  transition-delay: 0.8s;
+    0 0 15px rgba(180, 100, 255, 0.25),
+    inset 0 -2px 8px rgba(50, 10, 70, 0.7);
+  transition: all .5s ease;
   position: relative;
-
-  /* 皮革/丝绒质感（替换原来的纯蓝） */
-  background:
-    linear-gradient(180deg, rgba(30, 18, 36, 0.6), rgba(15, 9, 18, 0.85)),
-    radial-gradient(120% 100% at 50% 0%, rgba(120, 80, 120, 0.15), transparent 60%),
-    linear-gradient(160deg, #1b1122, #0f0a12);
-  background-blend-mode: multiply, soft-light, normal;
-
+  opacity: 0;
   cursor: pointer;
 }
 
-/* 悬停：烛光泛起、微微抖动 */
-.left, .center, .right, .lefter, .righter {
-  border: 1px solid rgba(138,73,166,0.3);
-  outline: 1px solid rgba(191,52,128,0.3);
-  background:
-    linear-gradient(180deg, rgba(87,22,115,0.8), rgba(13,12,11,0.95)),
-    radial-gradient(120% 100% at 50% 0%, rgba(191,52,128,0.15), transparent 70%);
-  box-shadow:
-    inset 0 1px 0 rgba(255,235,250,0.05),
-    inset 0 -2px 10px rgba(87,22,115,0.5),
-    0 8px 24px rgba(0,0,0,.6);
+/* 中间那张卡片初始显示 */
+.center { opacity: 1; }
+
+/* 发光效果 */
+.lefter:hover, .left:hover, .center:hover, .right:hover, .righter:hover {
+  box-shadow: 0 0 25px 5px rgba(200, 100, 255, 0.4);
+  background-color: rgba(70, 30, 100, 0.4);
+  transform: translateY(-6px);
 }
-.left:hover, .center:hover, .right:hover, .lefter:hover, .righter:hover {
-  box-shadow:
-    0 0 25px 6px rgba(191,52,128,0.35),
-    0 6px 20px rgba(87,22,115,0.4);
-  background-color: rgba(191,52,128,0.15);
-}
+
+/* 文字样式 */
 .text {
-  color: #EAD6F7;
-  text-shadow: 0 0 5px rgba(138,73,166,.6);
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: #f5eaff;
+  font-size: 14px;
+  text-shadow: 0 0 4px rgba(190, 120, 255, 0.6);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .4s ease, transform .4s ease;
+}
+.lefter:hover .text,
+.left:hover .text,
+.center:hover .text,
+.right:hover .text,
+.righter:hover .text {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* 卡片的空间排布（保持你的 3D 阵列） */
-.lefter  { transform: translateX(-60px) translateZ(-50px) rotateY(-10deg); }
-.left    { transform: translateX(-30px) translateZ(-25px) rotateY(-5deg);  }
-.center  { opacity: 1;                                                      }
-.right   { transform: translateX( 30px) translateZ(-25px) rotateY( 5deg);  }
-.righter { transform: translateX( 60px) translateZ(-50px) rotateY(10deg);  }
+/* 空间排布 */
+.lefter  { transform: translateX(-60px) translateZ(-60px) rotateY(-10deg); background:url(https://cdn3.iconfinder.com/data/icons/other-icons/48/organization-512.png) center/64px no-repeat; }
+.left    { transform: translateX(-30px) translateZ(-30px) rotateY(-5deg);  background:url(https://cdn3.iconfinder.com/data/icons/other-icons/48/creative_draw-512.png) center/64px no-repeat; }
+.center  { background:url(https://cdn3.iconfinder.com/data/icons/other-icons/48/app_window-512.png) center/64px no-repeat; }
+.right   { transform: translateX(30px) translateZ(-30px) rotateY(5deg);   background:url(https://cdn3.iconfinder.com/data/icons/other-icons/48/cloud_weather-512.png) center/64px no-repeat; }
+.righter { transform: translateX(60px) translateZ(-60px) rotateY(10deg);  background:url(https://cdn3.iconfinder.com/data/icons/other-icons/48/search-512.png) center/64px no-repeat; }
 
-/* 说明卡（中间那张“Hover me”） */
+/* 中间说明文字 */
 .explainer {
-  /* background: linear-gradient(180deg, #8A49A6, #571673); */
-  color: #FFF0F8;
-  /* text-shadow: 0 0 10px rgba(191,52,128,0.8); */
+  position: absolute;
+  inset: 0;
+  font-size: 1.6rem;
+  color: #f0dcff;
+  background: radial-gradient(circle at center top, rgba(90, 20, 110, 0.9), rgba(15, 5, 25, 0.95));
+  border-radius: 6px;
+  text-shadow: 0 0 10px rgba(200, 150, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity .5s ease;
 }
 
+/* 当鼠标悬停在整个容器上时展开 */
+.all:hover .lefter,
+.all:hover .left,
+.all:hover .right,
+.all:hover .righter {
+  opacity: 1;
+  transition-delay: 0.2s;
+}
 
-/* ========== 图标：先保留背景图方案（如果不改 HTML） ========== */
-/* 你现在的卡片图标来自 background-image。
-   这不会被 image-rendering: pixelated 影响，但咱先保留。想要真正像素化，见下文“可选：像素图标改造”。 */
-.lefter  { background-image: url(https://cdn3.iconfinder.com/data/icons/other-icons/48/organization-512.png); background-position:center; background-repeat:no-repeat; background-size: 64px; }
-.left    { background-image: url(https://cdn3.iconfinder.com/data/icons/other-icons/48/creative_draw-512.png);   background-position:center; background-repeat:no-repeat; background-size: 64px; }
-.center  { background-image: url(https://cdn3.iconfinder.com/data/icons/other-icons/48/app_window-512.png);       background-position:center; background-repeat:no-repeat; background-size: 64px; }
-.right   { background-image: url(https://cdn3.iconfinder.com/data/icons/other-icons/48/cloud_weather-512.png);    background-position:center; background-repeat:no-repeat; background-size: 64px; }
-.righter { background-image: url(https://cdn3.iconfinder.com/data/icons/other-icons/48/search-512.png);           background-position:center; background-repeat:no-repeat; background-size: 64px; }
-
+/* 当鼠标在中心卡片上时，说明消失 */
+.center:hover .explainer {
+  opacity: 0;
+}
