@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>像素风格卡片翻转</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="button_container">
+      <img id="star" width="64" height="64" src="download.png" alt="icon" />
+    </div>
+    
+    <!-- 添加卡片容器 -->
+    <div class="cards-container" id="cardsContainer">
+      <div class="card" id="card1">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="pixel-pattern"></div>
+            <span class="card-text">点击翻转</span>
+          </div>
+          <div class="card-back">
+            <div class="card-content">
+              <div class="pixel-icon sword"></div>
+              <h3>像素剑</h3>
+              <p>传说中的像素武器</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card" id="card2">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="pixel-pattern"></div>
+            <span class="card-text">点击翻转</span>
+          </div>
+          <div class="card-back">
+            <div class="card-content">
+              <div class="pixel-icon shield"></div>
+              <h3>像素盾</h3>
+              <p>坚固的防御装备</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card" id="card3">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="pixel-pattern"></div>
+            <span class="card-text">点击翻转</span>
+          </div>
+          <div class="card-back">
+            <div class="card-content">
+              <div class="pixel-icon potion"></div>
+              <h3>像素药水</h3>
+              <p>恢复生命值</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

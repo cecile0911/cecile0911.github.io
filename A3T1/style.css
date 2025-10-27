@@ -1,24 +1,44 @@
-body{
-    background-image:url("background1.jpg");
-    /* https://au.pinterest.com/pin/137148751151540015/ */
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+body {
+  background-image: url("background1.jpg");
+  /* https://au.pinterest.com/pin/137148751151540015/ */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: "Pixelify Sans", sans-serif;
+  font-weight: 400;
 }
 .button-container {
-            background-color: transparent; /* 确保容器透明 */
-            padding: 20px;
-            border-radius: 10px;
-        }
+  background-color: transparent; /* 确保容器透明 */
+  padding: 20px;
+  border-radius: 10px;
+}
 
-        /* 图标样式 */
-        .button-container img {
-            display: block;
-            width: 100px;  /* 根据需要调整大小 */
-            height: 100px;
-        }
+/* 图标样式 */
+.button-container img {
+  display: block;
+  width: 100px; /* 根据需要调整大小 */
+  height: 100px;
+}
 
 div {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  place-items: center;
+  
+  height: 700px;
+}
+
+#star {
+    animation: floatWithScale 4s ease-in-out infinite;
+    cursor: pointer;
+}
+
+@keyframes floatWithScale {
+    0%, 100% {
+        transform: translateY(0px) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-20px) scale(1.05);
+        opacity: 0.9;
+    }
 }
