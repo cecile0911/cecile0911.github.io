@@ -3,21 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <title>TarotsWorld</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Pixelify+Sans:wght@400..700&family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <div class="button_container">
+    <audio id="clickSound" src="short-choir-6116.mp3"></audio>
+    <!-- https://pixabay.com/sound-effects/search/holy/?pagi=2 -->
+    <!--This is a chant sound effect with a mysterious atmosphere -->
+    <!-- I chose it because it resonates with the background of my website. -->
+    <header class="game-header">
+      <h1>TarotsWorld</h1>
+      <!-- At first,I planned to create a character introduction page, 
+       but it was difficult to find free-to-use character illustrations, 
+       so I temporarily replaced the original images with tarot cards. -->
+    </header>
 
-        <img id="star" width="64" height="64" src="download.png" alt="icon" />
-      
+    <h1>Let the Star Guide you.</h1>
+
+    <div class="button_container">
+      <img id="star" width="80" height="80" src="download.png" alt="icon" />
+      <!-- I made a simple animation for the Star,
+       as a button, it looks pretty enough and can 
+       attract users indeed -->
     </div>
   </body>
 </html>

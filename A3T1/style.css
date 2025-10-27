@@ -1,44 +1,169 @@
 body {
   background-image: url("background1.jpg");
   /* https://au.pinterest.com/pin/137148751151540015/ */
+  /* The background image depicts the interior of a church, with a rich array of colors, 
+  but when used, it doesn’t overpower the main content. */
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   font-family: "Pixelify Sans", sans-serif;
+  /* I chose a font that matches the style of the website, 
+hoping to keep the overall design cohesive.*/
   font-weight: 400;
+  font-size: larger;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  display: flex;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
+
+header {
+  font-family: "Doto", sans-serif;
+  /* this font is thinner than the font for the main body */
+  font-optical-sizing: auto;
+  font: weight 200;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 44px;
+  background: #5d0b46;
+  /* chose main color comes from the background image*/
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+  text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
+  font-size: x-large;
+}
+
 .button-container {
-  background-color: transparent; /* 确保容器透明 */
+  background-color: transparent;
+  /* Before adding this line, the star image somehow had a gray background*/
+  /*so I added it to ensure the container is transparent.*/
   padding: 20px;
   border-radius: 10px;
 }
 
-/* 图标样式 */
 .button-container img {
   display: block;
-  width: 100px; /* 根据需要调整大小 */
+  width: 100px;
   height: 100px;
 }
 
 div {
   display: grid;
   place-items: center;
-  
-  height: 700px;
+
+  height: 850px;
 }
 
 #star {
-    animation: floatWithScale 4s ease-in-out infinite;
-    cursor: pointer;
+  animation: floatWithScale 4s ease-in-out infinite;
+  cursor: pointer;
+  filter: drop-shadow(0 0 10px #ffcc00);
+  /* added text effect to convey the feeling of starlight.*/
+}
+/* here is the animation for the star button */
+@keyframes floatWithScale {
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+    opacity: 0.9;
+  }
 }
 
-@keyframes floatWithScale {
-    0%, 100% {
-        transform: translateY(0px) scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: translateY(-20px) scale(1.05);
-        opacity: 0.9;
-    }
+#star:hover {
+  scale: 0.9;
+  /* This emphasizes interactivity 
+  and also signals to the user that this is a clickable button.*/
+}
+
+.cards-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin-top: 150px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.card-container {
+  width: 250px;
+  height: 460px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  /* this is important the flip wont work without preserve-3d */
+}
+
+.card:hover {
+  scale: 0.98;
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.card-face img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.flip {
+  rotate: y 180deg;
+}
+.card-face-flip {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 30px;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  transform: rotateY(180deg);
+  background: #fff;
+}
+
+.card-face-flip img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
